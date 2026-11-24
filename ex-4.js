@@ -373,5 +373,45 @@ const bills = [
   },
 ];
 
-// Start coding here
-const totalMembers;
+// Start coding here (ข้อนี้ยาก)
+// function uniqueMemberCount(bills) {
+//   let result = bills.filter((bill) => bill.member !== null)
+//     .map((bill) => bill.member.name)
+//     .reduce((acc, name) => {
+//       if (!acc.includes(name)) {
+//         acc.push(name);
+//       }
+//       return acc;
+//     }, [])
+//     return result.length;
+// }
+// console.log(`Unique Members Count: ${totalMembers.length}`);
+// ลองย่อ
+const uniqueMemberCount = (bills) => 
+  bills
+    .filter((bill) => bill.member !== null)
+    .map((bill) => bill.member.name)
+    .reduce((acc, name) => {
+      !acc.includes(name)
+        ? acc.push(name)
+        : acc
+      return acc;
+    }, []
+  );
+
+const totalMembers = uniqueMemberCount(bills);
+console.log(`Unique Members Count: ${totalMembers.length}`);
+
+
+// const uniqueMemberCount = (bills) => 
+//   bills
+//     .filter((bill) => bill.member !== null)
+//     .map((bill) => bill.member.name)
+//     .reduce((acc, name) => 
+//       !acc.includes(name)
+//         ? (acc.push(name), acc) //Comma Operator ทำงานจากซ้ายไปขวา และคืนค่าเฉพาะ Expression สุดท้าย
+//         : acc
+//     , [])
+
+// const totalMembers = uniqueMemberCount(bills);
+// console.log(`Unique Members Count: ${totalMembers.length}`);
