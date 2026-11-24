@@ -1,8 +1,21 @@
 const carCollection = ["toyota", "fiat", "honda", "bmw"];
 
 function updateCarCollection(carBrand) {
-  // Start coding here
+  // Start coding here 
+  if (carCollection.includes(carBrand)) {
+    let position = carCollection.indexOf(carBrand) + 1;
+    return `${carBrand} has already existed in the ${position} position of car collection.`
+  } else {
+    carCollection.push(carBrand);
+    return `new car collection is : ${carCollection}`
+  }
 }
+
+// ย่อแล้วงง ดูยากหน่อย
+// const updateCarCollection = (carBrand) => 
+//   carCollection.includes(carBrand)
+//     ? `${carBrand} has already existed in the ${carCollection.indexOf(carBrand) + 1} position of car collection.`
+//     : (carCollection.push(carBrand), `new car collection is : ${carCollection}`);
 
 //ผลลัพธ์ที่ควรได้จาก Example case
 //ในกรณีที่ยังไม่มียี่ห้อรถใน carCollection

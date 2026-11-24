@@ -375,4 +375,11 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+// function memberFilter(members) {
+//   let result = members.filter((member) => member.member !== null);
+//   return result;
+// }
+const memberFilter = (bills) => bills.filter((memberCheck) => memberCheck.member !== null);
+// console.log(memberFilter(bills));
+const newBills = (memberFilter(bills));
+console.log(newBills);
